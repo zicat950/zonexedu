@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import Hero from './Hero';
 import About from './About';
@@ -8,6 +8,7 @@ import Courses from './Courses';
 import Mentors from './Mentors';
 import Contact from './Contact';
 import Profit from './Profit';
+import Webinar from './Webinar';
 import './App.css';
 
 function Home() {
@@ -18,6 +19,7 @@ function Home() {
       <section id="why-us"><WhyUs /></section>
       <section id="courses"><Courses /></section>
       <section id="mentor"><Mentors /></section>
+      <section id="webinar"><Webinar /></section>
       <section id="contact"><Contact /></section>
     </div>
   );
@@ -32,10 +34,11 @@ function MainLayout() {
     <div className="app">
       {/* Navbar will only show if we are NOT on the profit page */}
       {!isProfitPage && <Navbar />}
-      
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profit" element={<Profit />} />
+        <Route path="/webinar" element={<Webinar />} />
       </Routes>
     </div>
   );

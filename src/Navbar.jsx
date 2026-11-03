@@ -45,7 +45,7 @@ const Navbar = () => {
           {/* Nav Links */}
           <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
             <li className="nav-item">
-              <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>Home</Link>
+              <Link to="/" className="nav-links" onClick={() => setIsOpen(false)}>HOME</Link>
             </li>
             <li className="nav-item">
               <button onClick={() => handleSectionClick('about')} className="nav-links nav-btn-reset">About</button>
@@ -58,6 +58,9 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <button onClick={() => handleSectionClick('mentor')} className="nav-links nav-btn-reset">Mentors</button>
+            </li>
+            <li className="nav-item">
+              <Link to="/webinar" className="nav-links" onClick={() => setIsOpen(false)}>WEBINAR</Link>
             </li>
             <li className="nav-item">
               <button onClick={() => handleSectionClick('contact')} className="nav-links nav-btn-reset">Contact</button>

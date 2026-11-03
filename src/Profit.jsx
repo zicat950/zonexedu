@@ -16,13 +16,18 @@ export default function Profit() {
 
   return (
     <div className="profit-page">
-      {/* Animated Header with solid clean text fill */}
-      <h1 className="profit-title">
+      <div className="profit-header-container">
+        <div className="profit-badge">VERIFIED PERFORMANCE</div>
+        <br /> <br />
+        <h1 className="profit-title">
+          Live Profit &amp; Loss Report
+        </h1>
         <br />
-        Live Profit &amp; Loss Report
-      </h1>
+        <p className="profit-subtitle">
+          Real-time account statements, trade executions, and verified growth metrics.
+        </p>
+      </div>
 
-      {/* Grid container: 3, 3, 2 formation */}
       <div className="profit-grid">
         {content.map((item, index) => (
           <div 
@@ -36,8 +41,10 @@ export default function Profit() {
                   className="profit-media" 
                   controls 
                   controlsList="nodownload"
+                  preload="metadata"
                 >
                   <source src={`/Videos/${item.fileName}`} type="video/mp4" />
+                  Your browser does not support the video tag.
                 </video>
               </div>
             ) : (
@@ -56,7 +63,6 @@ export default function Profit() {
         ))}
       </div>
 
-      {/* Back Button */}
       <div className="back-btn-container">
         <Link to="/" className="profit-back-btn">
           <svg xmlns="http://www.w3.org/2000/svg" className="back-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">

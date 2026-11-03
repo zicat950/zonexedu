@@ -1,136 +1,151 @@
-/* Allow normal scrolling on the page */
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: #0b0f19;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: hidden;
-}
-
 .profit-page {
-  display: flex;
-  flex-direction: column;
+  background-color: #070d1b;
   min-height: 100vh;
-  /* Top padding clears the fixed navbar */
-  padding: 100px 20px 40px 20px;
+  padding: 60px 20px 80px 20px;
+  color: #f1f5f9;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   box-sizing: border-box;
 }
 
-/* Header Styling */
-.profit-title {
+.profit-header-container {
   text-align: center;
-  font-size: 2.2rem;
-  margin: 0 0 30px 0;
-  color: #00ffcc;
-  letter-spacing: 1px;
+  margin-bottom: 50px;
 }
 
-/* Grid container for 3 columns */
+.profit-badge {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.15);
+}
+
+.profit-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
+  letter-spacing: -0.5px;
+}
+
+.profit-subtitle {
+  color: #94a3b8;
+  font-size: 1.05rem;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
 .profit-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
 }
 
-/* Responsive breakpoint for smaller screens/tablets */
-@media (max-width: 900px) {
-  .profit-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .profit-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Individual Card */
 .profit-card {
-  background: #151a28;
-  border: 1px solid #222d42;
-  border-radius: 12px;
+  background: #0b1329;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding: 12px;
-  box-sizing: border-box;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.5s ease forwards;
+  justify-content: space-between;
 }
 
-/* Media Container */
+.profit-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56, 189, 248, 0.4);
+  box-shadow: 0 15px 35px rgba(56, 189, 248, 0.15);
+}
+
 .media-container {
   width: 100%;
-  aspect-ratio: 9 / 16;
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #040917 0%, #0b1329 100%);
+  border: 1px solid rgba(255, 255, 255, 0.03);
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #000000;
-  border-radius: 8px;
-  overflow: hidden;
+  aspect-ratio: 9 / 16;
+  position: relative;
 }
 
-/* Media Elements (Video & Image) */
 .profit-media {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  display: block;
 }
 
-/* Card Title */
 .profit-card-title {
-  font-size: 1rem;
   text-align: center;
-  margin: 12px 0 4px 0;
-  color: #e2e8f0;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-top: 18px;
+  margin-bottom: 0;
+  letter-spacing: 0.3px;
 }
 
-/* Back Button Container */
 .back-btn-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .profit-back-btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: #1e293b;
-  color: #00ffcc;
-  padding: 10px 20px;
-  border-radius: 8px;
-  text-decoration: none;
+  gap: 10px;
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  color: #ffffff;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
   font-size: 0.95rem;
-  font-weight: 600;
-  border: 1px solid #00ffcc44;
-  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
 }
 
 .profit-back-btn:hover {
-  background: #27354f;
+  background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
   transform: translateY(-2px);
 }
 
 .back-icon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
 }
 
-/* Simple fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
+@media (max-width: 1024px) {
+  .profit-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  .profit-grid {
+    grid-template-columns: 1fr;
+  }
+  .profit-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+  }
+  .profit-header-container {
+    padding: 0 10px;
   }
 }
